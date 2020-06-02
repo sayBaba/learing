@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop" xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd
+        http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+
+    <!--<bean id="person" class="com.hzit.srping.learing.model.Person">
+
+        <property name="userName" value="张三"></property>
+    </bean>-->
+
+<!--    &lt;!&ndash;sayHellep 注入到spring容器 &ndash;&gt;
+    <bean id="sayHellep" class="com.hzit.srping.learing.service.SayHellep">
+        <property name="iSayHello" ref="sayEng"></property>
+
+    </bean>
+
+    &lt;!&ndash;SayChinese 注入到spring容器 &ndash;&gt;
+
+    <bean id="sayChinese" class="com.hzit.srping.learing.service.impl.SayChinese"></bean>
+
+    &lt;!&ndash;SayEng 注入到spring容器 &ndash;&gt;
+    <bean id="sayEng" class="com.hzit.srping.learing.service.impl.SayEng"></bean>
+
+
+    &lt;!&ndash; 注入user &ndash;&gt;
+
+    <bean id = "user" class="com.hzit.srping.learing.model.User">
+        <property name="userName" value="小翠"></property>
+        <property name="pwd" value="123"></property>
+        <property name="phone" value="189989"></property>
+        <property name="loginService" ref="loginService"></property>
+    </bean>
+
+    <bean id="loginService" class="com.hzit.srping.learing.service.LoginService"></bean>
+
+
+    <bean id="person" class="com.hzit.srping.learing.model.Person">
+        <constructor-arg name="userName" value="qwe"></constructor-arg>
+        <constructor-arg name="password" value="123"></constructor-arg>
+    </bean>
+
+
+    <bean id="customer" class="com.hzit.srping.learing.model.Customer">
+        <property name="userList" >
+            <list>
+                <ref bean="user1"></ref>
+                <ref bean="user2"></ref>
+            </list>
+        </property>
+
+        <property name="date" ref="myDate"></property>
+
+    </bean>
+
+    <bean id="user1" class="com.hzit.srping.learing.model.User">
+        <property name="userName" value="小翠"></property>
+        <property name="pwd" value="123"></property>
+    </bean>
+
+    <bean id="user2" class="com.hzit.srping.learing.model.User">
+        <property name="userName" value="小翠11"></property>
+        <property name="pwd" value="456"></property>
+    </bean>
+
+    <bean id="myDate" class="java.util.Date">
+    </bean>-->
+
+<!--
+    <bean id="user2" class="com.hzit.srping.learing.model.User"></bean>
+-->
+    <!-- 这个包下的类会生成对象 -->
+    <context:component-scan base-package="com.hzit.srping.learing"></context:component-scan>
+
+</beans>
