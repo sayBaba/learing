@@ -4,9 +4,11 @@ import com.hzit.srping.learing.dao.DbUtil;
 import com.hzit.srping.learing.model.Customer;
 import com.hzit.srping.learing.model.Person;
 import com.hzit.srping.learing.model.User;
+import com.hzit.srping.learing.service.IPersonSevice;
 import com.hzit.srping.learing.service.ISayHello;
 import com.hzit.srping.learing.service.LoginService;
 import com.hzit.srping.learing.service.SayHellep;
+import com.hzit.srping.learing.util.LimitInterface;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.context.support.SpringBeanAutowiringSupport;
@@ -30,8 +32,16 @@ public class LoginController extends HttpServlet {
     @Autowired
     private Customer customer;
 
-    @Resource(name = "dbUtil")
-    private DbUtil dbUtil;
+
+    @Autowired
+    private IPersonSevice iPersonSevice;
+
+//    @Resource(name = "dbUtil")
+//    private DbUtil dbUtil;
+//
+//
+//    @Autowired
+//    private LimitInterface limitInterface;
 
 
 
@@ -45,12 +55,28 @@ public class LoginController extends HttpServlet {
 
     }
 
+    /**
+     * 登录
+     * @param req
+     * @param res
+     * @throws ServletException
+     * @throws IOException
+     */
     @Override
+    /**
+     * 连接点
+     */
     public void service(ServletRequest req, ServletResponse res) throws ServletException, IOException {
 
-        iSayHello.sayHello();
+//        iPersonSevice.save();
 
-        System.out.println("时间---" + customer.getDate());
+//        //统计1分钟内的调用次数
+//        limitInterface.countLoginTimes();
+//
+//
+//        iSayHello.sayHello();
+//
+//        System.out.println("时间---" + customer.getDate());
 
 //        dbUtil.getConn();
 

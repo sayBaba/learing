@@ -74,11 +74,32 @@
 
 
 
+    <aop:aspectj-autoproxy />
 
 
 <!--
     <bean id="user2" class="com.hzit.srping.learing.model.User"></bean>
 -->
+
+<!--
     <context:component-scan base-package="com.hzit.srping.learing"></context:component-scan>
+-->
+
+
+    <bean id="person" class="com.hzit.srping.learing.service.impl.PersonSeviceImpl"></bean>
+
+    <bean id="aop" class="com.hzit.srping.learing.util.MyAop"></bean>
+
+    <!-- aop的配置 -->
+    <aop:config>
+        <aop:pointcut id="pointcut1" expression="execution(* com.hzit.srping.learing.service.impl.*.*(..))"/>
+
+        <aop:aspect ref="aop">
+            <aop:after method="afterMethod" pointcut-ref="pointcut1"></aop:after>
+        </aop:aspect>
+
+    </aop:config>
+
+
 
 </beans>
